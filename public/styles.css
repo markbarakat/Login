@@ -1,0 +1,47 @@
+body {
+    background: #202124;
+}
+
+
+.inputField {
+    display: flex;
+    justify-content: center;
+    /* left-right */
+    flex-direction: column;
+    align-items: center;
+    /* top-bottom */
+    min-height: 100vh;
+    /* body has to be full screen height, or it can't center vertically */
+    margin: 0;
+    /* removes the default gap that causes a scrollbar */
+
+}
+
+.Label {
+    font-size: 2rem;
+    color: #E6C35C;
+    margin-bottom: 1.2rem;
+}
+
+.Input {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    border: 2px solid #ccc;
+    /* thickness, style, color */
+    border-radius: 8px;
+    /* rounded corners */
+    padding: 10px;
+}
+
+.button {
+    font-size: 1.5rem;
+    background: #E6C35C;
+    padding: 10px;
+    border: 2px solid snow;
+    /* thickness, style, color */
+    border-radius: 8px;
+}
+
+.button:hover {
+    background: #B8952B;
+}
