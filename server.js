@@ -11,7 +11,7 @@ const usersFile = process.env.USERS_FILE || './users.xlsx'
 // allow the front end (e.g. GitHub Pages) to call this API
 app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:3000' }))
 app.use(express.json())             // lets the server read JSON sent from app.js
-app.use(express.static('public'))   // serves index.html, app.js, styles.css
+app.use(express.static('docs'))   // serves index.html, app.js, styles.css
 
 // reads all users from the Excel sheet
 function getUsers() {
