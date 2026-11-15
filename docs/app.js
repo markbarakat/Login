@@ -1,5 +1,8 @@
 console.log("app.js connected");
 
+const API = location.hostname === "localhost" ? "" : "https://login-xwv2.onrender.com";
+
+
 const inputField = document.createElement("div");
 inputField.className = "inputField";
 
@@ -38,7 +41,7 @@ document.body.appendChild(inputField);
 
 
 signInButton.addEventListener("click", async () => {
-    const response = await fetch("/api/login", {
+   const response = await fetch(API + "/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

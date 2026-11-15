@@ -9,14 +9,14 @@ const port = process.env.PORT || 3000
 const usersFile = process.env.USERS_FILE || './users.xlsx'
 
 // allow the front end (e.g. GitHub Pages) to call this API
-app.use(cors({ origin: process.env.CORS_ORIGIN || 'http://localhost:3000' }))
+app.use(cors({ origin: process.env.CORS_ORIGIN || 'https://markbarakat.github.io' }))
 app.use(express.json())             // lets the server read JSON sent from app.js
 app.use(express.static('docs'))   // serves index.html, app.js, styles.css
 
 // reads all users from the Excel sheet
 function getUsers() {
     const workbook = xlsx.readFile(usersFile)
-    const worksheet = workbook.Sheets['users']
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]]   // first sheet (works for .xlsx and .csv)
     return xlsx.utils.sheet_to_json(worksheet)   // [{ username, password }, ...]
 }
 
